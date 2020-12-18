@@ -15,7 +15,7 @@ struct table* createTable(int size){
     struct table *table1 = (struct table*)malloc(sizeof(struct table));
     table1->size = size;
     table1->list = (struct row**)malloc(size * sizeof(struct row*));
-	memset(table1->list, ' ', size);
+    memset(table1->list, ' ', size);
     return table1;
 }
 int hashCode(struct table *table1,int key){
@@ -41,4 +41,11 @@ int lookup(struct table *table1,int key){
         temp = temp->next; //scans every node on table after the first occurence matching the hashcode and returns the 'vals' for any matching the hashcode after that
     }
     return -1;
+}
+
+int main(){
+    struct table *table1 = createTable(5);
+    insert(table1,9,13);
+    printf("%d\n",lookup(table1,9));
+    return 0;	
 }
