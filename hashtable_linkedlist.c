@@ -23,7 +23,7 @@ int hashCode(struct table *table1,int key){
 }
 void insert(struct table *table1,int key,int val){
     int pos = hashCode(table1,key);
-    struct row *list = table1->list[pos]; //stores the key, val and *next for that position on the hashtable; defined as *list because its an array of values - key, val and *next
+    struct row *list = table1->list[pos]; //stores the key, val and *next for the first occurence of hashcode in the hashtable; defined as *list because its an array of values - key, val and *next
     struct row *newNode = (struct row*)malloc(sizeof(struct row));
     struct row *temp = list; //allows *list to be passed by value and not reference for the while loop
     while(temp){
