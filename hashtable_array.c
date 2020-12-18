@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-#define SIZE 20
+#define SIZE 15
 
 struct DataItem {
    int data;
