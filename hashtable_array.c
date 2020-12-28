@@ -19,7 +19,7 @@ int hashCode(int key) {
    return key % SIZE;
 }
 
-struct DataItem *search(int key) {
+struct DataItem *search(int key, struct DataItem* hashArray) {
    //get the hash
    int hashIndex = hashCode(key);
 
